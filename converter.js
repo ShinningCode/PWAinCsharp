@@ -6,7 +6,7 @@ const outputField = document.getElementById('output-temp');
 function convertTemp(value, fromUnit, toUnit) {
     if (fromUnit === 'c') {
         if (toUnit === 'f') {
-            return value  9 / 5 + 32;
+            return value * 9 / 5 + 32;
         } else if (toUnit === 'k') {
             return value + 273.15;
         }
@@ -24,7 +24,7 @@ function convertTemp(value, fromUnit, toUnit) {
         if (toUnit === 'c') {
             return value - 273.15;
         } else if (toUnit === 'f') {
-            return * 9 / 5 - 459.67;
+            return value * 9 / 5 - 459.67;
         }
         return value;
     }
