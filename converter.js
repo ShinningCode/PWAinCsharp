@@ -2,7 +2,7 @@ const inputField = document.getElementById('input-temp');
 const fromUnitField = document.getElementById('input-unit');
 const toUnitField = document.getElementById('output-unit');
 const outputField = document.getElementById('output-temp');
-
+const form = document.getElementById('converter');
 function convertTemp(value, fromUnit, toUnit) {
     if (fromUnit === 'c') {
         if (toUnit === 'f') {
@@ -30,12 +30,12 @@ function convertTemp(value, fromUnit, toUnit) {
     }
     throw new Error('invalid unit');
 }
-from.addEventListener('input', () => {
+form.addEventListener('input', () => {
     const inputTemp = parseFloat(inputField.value);
     const fromUnit = fromUnitField.value;
     const toUnit = toUnitField.value;
 
     const outputTemp = convertTemp(inputTemp, fromUnit, toUnit);
     outputField.value = (Math.round(outputTemp * 100) / 100) + ' ' + toUnit.toUpperCase();
-})
+});
 
